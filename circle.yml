@@ -1,0 +1,16 @@
+machine:
+  environment:
+    AWS_ACCESS_KEY_ID: AKIAJD53MEWTZDZPKC4Q
+    AWS_SECRET_ACCESS_KEY: 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
+
+# Pull Requestされたらdry runする
+test:
+  override:
+    - bundle exec roadwork -a --dry-run
+
+# masterにマージされたら実際に適用する
+deployment:
+  production:
+    branch: master
+    commands:
+      - bundle exec roadwork -a

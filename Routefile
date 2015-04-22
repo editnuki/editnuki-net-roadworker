@@ -1,0 +1,17 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+hosted_zone "editnuki.net." do
+  rrset "aaa.editnuki.net.", "A" do
+    ttl 86400
+    resource_records(
+      "8.8.8.8"
+    )
+  end
+
+  rrset "test.editnuki.net.", "A" do
+    ttl 86400
+    resource_records(
+      "8.8.8.8"
+    )
+  end
+end
